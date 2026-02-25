@@ -15,7 +15,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
 
   kafka:
-    bootstrap-servers: localhost:9092
     producer:
       acks: all
 
