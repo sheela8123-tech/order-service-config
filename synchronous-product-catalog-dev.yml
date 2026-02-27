@@ -1,9 +1,7 @@
-server:
-  port: 8083
 
 spring:
   application:
-    name: synchronous-order-service
+    name: synchronous-product-catalog
 
   datasource:
     url: jdbc:mysql://localhost:3306/flipcart?useSSL=false&serverTimezone=Asia/Kolkata&allowPublicKeyRetrieval=true
