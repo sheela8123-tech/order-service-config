@@ -1,22 +1,24 @@
 spring:
   application:
     name: api-gateway
+
   data:
     redis:
       host: localhost
       port: 6379
+
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+
       routes:
-       
         - id: synchronous-order-service
           uri: lb://synchronous-order-service
           predicates:
-            - Path=/api/orders/**
+            - Path=/api/order/**
           filters:
             - StripPrefix=1
             - name: RequestRateLimiter
@@ -25,6 +27,7 @@ spring:
                 redis-rate-limiter.burstCapacity: 5
                 redis-rate-limiter.requestedTokens: 1
                 key-resolver: "#{@ipKeyResolver}"
+
 eureka:
   client:
     service-url:
