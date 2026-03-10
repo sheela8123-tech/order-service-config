@@ -18,7 +18,7 @@ spring:
         - id: synchronous-order-service
           uri: lb://synchronous-order-service
           predicates:
-            - Path=/api/order/**
+            - Path=/api/orders/**
           filters:
             - StripPrefix=1
             - name: RequestRateLimiter
