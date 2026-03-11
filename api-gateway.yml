@@ -16,7 +16,7 @@ spring:
 
       routes:
         - id: synchronous-order-service
-          uri: lb://synchronous-order-service
+          uri: lb://SYNCHRONOUS-ORDER-SERVICE
           predicates:
             - Path=/api/orders/**
           filters:
@@ -35,4 +35,4 @@ eureka:
     register-with-eureka: true
 
 server:
-  port: 8085
+  port: 8090
